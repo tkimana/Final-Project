@@ -2,11 +2,11 @@
 class ApplicationController < ActionController::API
  
   before_action :check_authentication
+# this is for displaying your app to 3000 port
+    def react_app
+        render :file => 'public/index.html'
+    end
 
-  def react_app
-    render :file => 'public/index.html'
- end
- 
   def encode_token(payload) 
       JWT.encode(payload, "Secret", "HS256") 
   end
