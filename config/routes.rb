@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # localhost:3000/api/v1/login
+
   namespace :api do
     namespace :v1 do
       resources :cards, only: [:index,:create,  :update, :destroy]
@@ -8,10 +8,7 @@ Rails.application.routes.draw do
       post '/login', to: 'auth#create'
       get '/userlists', to: 'lists#get_user_list'
 
-
-
-   
-     
+ 
     end
   end
   get '*path', to: "application#react_app", constraints: ->(request) do
