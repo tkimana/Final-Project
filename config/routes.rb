@@ -8,13 +8,15 @@ Rails.application.routes.draw do
       post '/login', to: 'auth#create'
       get '/userlists', to: 'lists#get_user_list'
 
-     
+
+
+  #     get '*path', to: "application#react_app", constraints: ->(request) do
+  # !request.xhr? && request.format.html?
+  # end
      
     end
   end
-  get '*path', to: "application#react_app", constraints: ->(request) do
-  !request.xhr? && request.format.html?
-  end
+ 
  
 end
 
